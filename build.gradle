@@ -16,12 +16,20 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'org.testng:testng:7.3.0'
 
 }
 
+test {
+    useTestNG()
+}
 
 test {
-    useJUnitPlatform()
+    testLogging {
+        events "failed"
+        exceptionFormat "full"
+    }
 }
